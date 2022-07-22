@@ -1,6 +1,6 @@
 # 이준용
 
-## 🪝 **Development environment setting**
+## ⚙️ **Development environment setting**
 
 ### 📢 Setup List
 
@@ -54,7 +54,7 @@
     - ~~npm install -g yarn~~  (이제 사용 안 함)
     
 
-## 🪝 **Style Guide (version 3)**
+## 🖌️ **Style Guide (version 3)**
 
 *코드 리팩토링할 때, 읽어보면서 해보면 좋을 듯*
 
@@ -575,7 +575,7 @@
     
 </aside>
 
-## 🪝 **Basic Manual** ~~작업중~~
+## 📄 **Basic Manual** ~~작업중~~
 
 *숙지 필요*
 
