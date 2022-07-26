@@ -1,6 +1,9 @@
 # 이준용
 
-## ⚙️ **Development environment setting**
+[https://github.com/ju-nong/Vue-Note](https://github.com/ju-nong/Vue-Note)
+오 대박
+
+## ****⚙️**** **Development environment setting**
 
 ### 📢 Setup List
 
@@ -54,14 +57,14 @@
     - ~~npm install -g yarn~~  (이제 사용 안 함)
     
 
-## 🖌️ **Style Guide (version 3)**
+## ****🖌️**** **Style Guide (version 3)**
 
 *코드 리팩토링할 때, 읽어보면서 해보면 좋을 듯*
 
 ### 📢 필수
 
 <aside>
-💡 **내장 컴포넌트와의 충돌을 방지하기 위해, 컴포넌트명은 합성어를 사용**
+💡 내장 컴포넌트와의 충돌을 방지하기 위해, 컴포넌트명은 합성어를 사용
 
 - **DETAILS**
     
@@ -91,7 +94,7 @@
 </aside>
 
 <aside>
-💡 **Prop은 상세하게 정의하고 Type을 명시**
+💡 Prop은 상세하게 정의하고 Type을 명시
 
 - **DETAILS**
     
@@ -103,7 +106,8 @@
     ```jsx
     ✅
     props: {
-      status: String
+      status: String,
+    	multiple : [Array, String],
     }
     
     // 더 나은 방법!
@@ -121,7 +125,7 @@
 </aside>
 
 <aside>
-💡 **v-for에는 항상 key 사용**
+💡 v-for에는 항상 key 사용
 
 - **DETAILS**
     
@@ -149,7 +153,7 @@
 </aside>
 
 <aside>
-💡 **v-if와 v-for 동시 사용 금지**
+💡 v-if와 v-for 동시 사용 금지
 
 - **DETAILS**
     
@@ -191,7 +195,7 @@
 </aside>
 
 <aside>
-💡 **최상위 App과 레이아웃 컴포넌트의 스타일은 전역 가능**
+💡 최상위 App과 레이아웃 컴포넌트의 스타일은 전역 가능
 
 **그외 모든 컴포넌트는 scoped 속성 사용**
 
@@ -234,7 +238,7 @@
 </aside>
 
 <aside>
-💡 **모듈 범위 지정 및 속성명에  $, _ 식별자 사용 *(관례)***
+💡 모듈 범위 지정 및 속성명에  $, _ 식별자 사용 (관례)
 
 **다른 코드와 충돌하지 않도록 지정된 범위까지 포함**
 
@@ -275,7 +279,7 @@
 - **컴포넌트명**
     
     <aside>
-    💡 **컴포넌트 파일명은 파스칼과 케밥식을 사용**
+    💡 컴포넌트 파일명은 파스칼과 케밥식을 사용
     
     | 파스칼 | MyComponent |
     | --- | --- |
@@ -285,7 +289,7 @@
     </aside>
     
     <aside>
-    💡 **베이스 컴포넌트는 앞에 Base, App, V와 같은 접두사를 붙임**
+    💡 베이스 컴포넌트는 앞에 Base, App, V와 같은 접두사를 붙임
     
     - **DETAILS**
         
@@ -318,7 +322,7 @@
     </aside>
     
     <aside>
-    💡 **하나의 활성 인스턴스를 갖는 컴포넌트는 앞에 The 접두사로 시작**
+    💡 하나의 활성 인스턴스를 갖는 컴포넌트는 앞에 The 접두사로 시작
     
     **ex) Header, Footer, SideBar, Navigation**
     
@@ -343,7 +347,7 @@
     </aside>
     
     <aside>
-    💡 **부모 컴포넌트와 밀접하게 연관된 자식 컴포넌트는 접두사로 부모명 사용**
+    💡 부모 컴포넌트와 밀접하게 연관된 자식 컴포넌트는 접두사로 부모명 사용
     
     - **DETAILS**
         
@@ -366,8 +370,8 @@
     </aside>
     
     <aside>
-    💡 **컴포넌트명은 최상위 수준의 단어(대부분, 자주, 일반적)로 시작하고
-    설명을 나타내는 단어로 끝냄**
+    💡 컴포넌트명은 최상위 수준의 단어(대부분, 자주, 일반적)로 시작하고
+    설명을 나타내는 단어로 끝냄
     
     - **DETAILS**
         
@@ -396,7 +400,7 @@
     </aside>
     
     <aside>
-    💡 **내용이 없는 컴포넌트는 self-closing 처리**
+    💡 내용이 없는 컴포넌트는 self-closing 처리
     `DOM 템플릿은 해당 안 됨`
     
     - **DETAILS**
@@ -422,7 +426,7 @@
     </aside>
     
     <aside>
-    💡 **컴포넌트명은 약어보다 전체 단어로**
+    💡 컴포넌트명은 약어보다 전체 단어로
     
     - **DETAILS**
         
@@ -443,7 +447,7 @@
     </aside>
     
     <aside>
-    💡 **prop명을 선언할 때는 카멜, 템플릿 및 JSX에서는 케밥**
+    💡 prop명을 선언할 때는 카멜, 템플릿 및 JSX에서는 케밥
     
     - **DETAILS**
         
@@ -470,7 +474,7 @@
 - **기타**
     
     <aside>
-    💡 **템플릿에는 computed나 methods 및 간단한 표현식만 포함**
+    💡 템플릿에는 computed나 methods 및 간단한 표현식만 포함
     
     `computed는 여러 개의 간단한 속성으로 분할해야함`
     
@@ -503,7 +507,7 @@
     </aside>
     
     <aside>
-    💡 **디렉티브 약어는 모두 통일하거나 전부 사용하지 않기**
+    💡 디렉티브 약어는 모두 통일하거나 전부 사용하지 않기
     
     `혼용하여 사용하지 않고, 하나로 통일`
     
@@ -517,7 +521,7 @@
 ### 📢 권장 (임의 선택과 인지 오버헤드 최소화)
 
 <aside>
-💡 **요소 속성 순서  *(사용해본 것만 나열해봄)***⭐
+💡 요소 속성 순서  (사용해본 것만 나열해봄)⭐
 
 1. is
 2. v-for
@@ -529,7 +533,7 @@
 </aside>
 
 <aside>
-💡 **컴포넌트와 인스턴스 옵션 순서  *(역시 사용해본 것만)***
+💡 컴포넌트와 인스턴스 옵션 순서  (역시 사용해본 것만)
 
 1. name
 2. components
@@ -543,7 +547,7 @@
 ### 📢 주의 필요
 
 <aside>
-💡 **scoped에서 요소 선택보다는 class로 선택하는 것이 빠름**
+💡 scoped에서 요소 선택보다는 class로 선택하는 것이 빠름
 
 - **DETAILS**
     
@@ -575,14 +579,14 @@
     
 </aside>
 
-## 📄 **Basic Manual** ~~작업중~~
+## ****📄**** **Basic Manual**
 
 *숙지 필요*
 
 ### 📢 setup
 
 <aside>
-💡 **setup 훅 내부에는 data와 function 요소들로 이루어져 있음**
+💡 setup 훅 내부에는 data와 function 요소들로 이루어져 있음
 
 </aside>
 
@@ -606,9 +610,9 @@ export default {
 ### 📢 ref, reactive
 
 <aside>
-💡 **반응형 data를 만들 때 사용
+💡 반응형 data를 만들 때 사용
 ref는 모든 값에 대해 반응형을 
-reactive는 원시값이 아닌 객체와 배열만 사용 가능**
+reactive는 원시값이 아닌 객체와 배열만 사용 가능
 
 `함수내에서 ref는 .value를 붙이고, 템플릿에서는 ref명만 붙임`
 
@@ -646,10 +650,10 @@ export default {
 ### 📢 computed
 
 <aside>
-💡 **템플릿내의 값이 변환이 되어야 하는 경우
+💡 템플릿내의 값이 변환이 되어야 하는 경우
 많은 연산을 해야 할 경우
 종속대상을 캐싱하여 값이 변경 될 때만 호출됨
-read만하고 무언가를 반환만 함**
+read만하고 무언가를 반환만 함
 
 </aside>
 
@@ -680,9 +684,9 @@ export default {
 ### 📢 watch
 
 <aside>
-💡 **값이 변경된 시점에서 원하는 액션을 취할 때
+💡 값이 변경된 시점에서 원하는 액션을 취할 때
 new와 old 값을 확인할 수 있다.
-ex) router 변화 감지**
+ex) router 변화 감지
 
 </aside>
 
@@ -712,9 +716,9 @@ export default {
 ### 📢 동적 컴포넌트
 
 <aside>
-💡 **탭을 예로 듦
+💡 탭을 예로 듦
 현재 탭에서 새로운 탭을 선택하면, Vue는 새로운 컴포넌트 인스턴스를 생성함
-동적 컴포넌트를 사용하면 컴포넌트 인스턴스를 생성했을 때, 캐싱시켜 리랜더링을 막고 상태 유지가 가능함.**
+동적 컴포넌트를 사용하면 컴포넌트 인스턴스를 생성했을 때, 캐싱시켜 리랜더링을 막고 상태 유지가 가능함.
 
 </aside>
 
@@ -753,5 +757,49 @@ export default {
         return { currentTab, tabs, currentTabComponent };
     },
 };
+</script>
+```
+
+## 📃**Deep Manual** ~~작업중~~
+
+### **📢 <script setup>**
+
+<aside>
+💡 더 간결한 코드
+더 빠른 성능
+setup 기능만 제공
+내보내기가 필요하면 일반 setup 블록을 이용할 것
+
+</aside>
+
+```jsx
+<template>
+	<MyComponent />
+  <button @click="log">{{ msg }}</button>
+</template>
+
+<script setup>
+	// Composition API
+	import {ref} from "vue";
+
+	// import Component
+	import MyComponent from "./MyComponent.vue";
+
+	// props
+	const props = defineProps({
+	  foo: String
+	});
+
+	// emit	
+	const emit = defineEmits(['change', 'delete']);
+
+	// variable
+	const msg = 'Hello!';
+	const name = ref("이준용");
+	
+	// functions
+	const log = () => {
+		console.log(
+	}
 </script>
 ```
