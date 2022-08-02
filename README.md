@@ -1,27 +1,25 @@
 # 이준용
 
-## 🪝 **Development environment setting**
+## \***\*⚙️\*\*** **Development environment setting**
 
 ### 📢 Setup List
 
-- Chrome
-- Visual Studio Code
-- Node.js
-- Git
+-   Chrome
+-   Visual Studio Code
+-   Node.js
+-   Git
 
 ### 📢 Visual Studio Code
 
-- **Extension Program**
-    - Prettier
-    - Vetur
-    - Vue VSCode Snippets
-- **Default Setting**
-    - Mouse Wheel Zoom ✔ (마우스 휠로 줌 아웃)
-    - Default Formatter -  Prettier (기본 포맷터 설정)
-    - Format On Save ✔ (자동 저장 설정)
-    
-- **JSON Setting**
-    
+-   **Extension Program**
+    -   Prettier
+    -   Vetur
+    -   Vue VSCode Snippets
+-   **Default Setting**
+    -   Mouse Wheel Zoom ✔ (마우스 휠로 줌 아웃)
+    -   Default Formatter - Prettier (기본 포맷터 설정)
+    -   Format On Save ✔ (자동 저장 설정)
+-   **JSON Setting**
     ```json
     {
         "workbench.colorTheme": "Default Dark+",
@@ -37,46 +35,40 @@
         "vetur.validation.style": false
     }
     ```
-    
 
 ### 📢 Node.js
 
-- **PowerShell (실행 정책 변경)**
-    
+-   **PowerShell (실행 정책 변경)**
     관리자 권한 실행 > Set-ExecutionPolicy RemoteSigned > [A] 모두 예(A)
-    
-- **Node command prompt**
-    - npm install -g @vue/cli
-    - npm install -g router
-    - npm install -g pinia
-    - npm install -g nodemon  (server)
-    - npm install -g sass-loader node-sass
-    - ~~npm install -g yarn~~  (이제 사용 안 함)
-    
+-   **Node command prompt**
+    -   npm install -g @vue/cli
+    -   npm install -g router
+    -   npm install -g pinia
+    -   npm install -g nodemon (server)
+    -   npm install -g sass-loader node-sass
+    -   ~~npm install -g yarn~~ (이제 사용 안 함)
 
-## 🪝 **Style Guide (version 3)**
+## \***\*🖌️\*\*** **Style Guide (version 3)**
 
-*코드 리팩토링할 때, 읽어보면서 해보면 좋을 듯*
+_코드 리팩토링할 때, 읽어보면서 해보면 좋을 듯_
 
 ### 📢 필수
 
 <aside>
 💡 **내장 컴포넌트와의 충돌을 방지하기 위해, 컴포넌트명은 합성어를 사용**
 
-- **DETAILS**
-    
+-   **DETAILS**
     ```jsx
     ❌
     app.component('todo', {
       // ...
     })
-    
+
     export default {
       name: 'Todo',
       // ...
     }
     ```
-    
     ```jsx
     ✅
     app.component('todo-item', {
@@ -87,25 +79,24 @@
       // ...
     }
     ```
-    
+
 </aside>
 
 <aside>
 💡 **Prop은 상세하게 정의하고 Type을 명시**
 
-- **DETAILS**
-    
+-   **DETAILS**
     ```jsx
     ❌
     props: ['status']
     ```
-    
     ```jsx
     ✅
     props: {
-      status: String
+      status: String,
+    	multiple : [Array, String],
     }
-    
+
     // 더 나은 방법!
     props: {
         status: {
@@ -117,14 +108,13 @@
         },
     },
     ```
-    
+
 </aside>
 
 <aside>
 💡 **v-for에는 항상 key 사용**
 
-- **DETAILS**
-    
+-   **DETAILS**
     ```jsx
     ❌
     <ul>
@@ -133,7 +123,6 @@
       </li>
     </ul>
     ```
-    
     ```jsx
     ✅
     <ul>
@@ -145,14 +134,13 @@
       </li>
     </ul>
     ```
-    
+
 </aside>
 
 <aside>
 💡 **v-if와 v-for 동시 사용 금지**
 
-- **DETAILS**
-    
+-   **DETAILS**
     ```jsx
     ❌ active 유저만 보여주고 싶을 때
     <ul>
@@ -165,7 +153,6 @@
       </li>
     </ul>
     ```
-    
     ```jsx
     ✅
     // Step 1: active인 유저 따로 만들어서 for 돌리기
@@ -177,7 +164,7 @@
         {{ user.name }}
       </li>
     </ul>
-    
+
     // Step 2: active 속성을 컨테이너로 감싸기
     <ul>
       <template v-for="user in users" :key="user.id">
@@ -187,7 +174,7 @@
       </template>
     </ul>
     ```
-    
+
 </aside>
 
 <aside>
@@ -197,40 +184,38 @@
 
 **기타 CSS 라이브러리를 이용할 때는 class 사용**
 
-- **DETAILS**
-    
+-   **DETAILS**
     ```jsx
     ❌
     <template>
       <button class="btn btn-close">×</button>
     </template>
-    
+
     <style>
     .btn-close {
       background-color: red;
     }
     </style>
     ```
-    
     ```jsx
     ✅
     <template>
       <button class="button button-close">×</button>
     </template>
-    
+
     <!-- `scoped` 속성 사용 -->
     <style scoped>
     .button {
       border: none;
       border-radius: 2px;
     }
-    
+
     .button-close {
       background-color: red;
     }
     </style>
     ```
-    
+
 </aside>
 
 <aside>
@@ -242,8 +227,7 @@
 
 `_ : private 명시`
 
-- **DETAILS**
-    
+-   **DETAILS**
     ```jsx
     ❌
     const myGreatMixin = {
@@ -255,7 +239,6 @@
       }
     }
     ```
-    
     ```jsx
     ✅
     const myGreatMixin = {
@@ -267,252 +250,250 @@
       }
     }
     ```
-    
+
 </aside>
 
 ### 📢 적극 권장 (가독성 향상)
 
-- **컴포넌트명**
-    
-    <aside>
-    💡 **컴포넌트 파일명은 파스칼과 케밥식을 사용**
-    
-    | 파스칼 | MyComponent |
-    | --- | --- |
-    | 케밥 | my-component |
-    | 카멜 | myComponent |
-    | 스네이크 | my_component |
-    </aside>
-    
-    <aside>
-    💡 **베이스 컴포넌트는 앞에 Base, App, V와 같은 접두사를 붙임**
-    
-    - **DETAILS**
-        
-        ```jsx
-        ❌
-        components/
-        |- MyButton.vue
-        |- VueTable.vue
-        |- Icon.vue
-        ```
-        
-        ```jsx
-        ✅
-        components/
-        |- BaseButton.vue
-        |- BaseTable.vue
-        |- BaseIcon.vue
-        
-        components/
-        |- AppButton.vue
-        |- AppTable.vue
-        |- AppIcon.vue
-        
-        components/
-        |- VButton.vue
-        |- VTable.vue
-        |- VIcon.vue
-        ```
-        
-    </aside>
-    
-    <aside>
-    💡 **하나의 활성 인스턴스를 갖는 컴포넌트는 앞에 The 접두사로 시작**
-    
-    **ex) Header, Footer, SideBar, Navigation**
-    
-    `페이지당 한 번만 사용된다는 의미`
-    
-    - **DETAILS**
-        
-        ```jsx
-        ❌
-        components/
-        |- Heading.vue
-        |- MySidebar.vue
-        ```
-        
-        ```jsx
-        ✅
-        components/
-        |- TheHeading.vue
-        |- TheSidebar.vue
-        ```
-        
-    </aside>
-    
-    <aside>
-    💡 **부모 컴포넌트와 밀접하게 연관된 자식 컴포넌트는 접두사로 부모명 사용**
-    
-    - **DETAILS**
-        
-        ```jsx
-        ❌
-        components/
-        |- TodoList.vue
-        |- TodoItem.vue
-        |- TodoButton.vue
-        ```
-        
-        ```jsx
-        ✅
-        components/
-        |- TodoList.vue
-        |- TodoListItem.vue
-        |- TodoListItemButton.vue
-        ```
-        
-    </aside>
-    
-    <aside>
-    💡 **컴포넌트명은 최상위 수준의 단어(대부분, 자주, 일반적)로 시작하고
-    설명을 나타내는 단어로 끝냄**
-    
-    - **DETAILS**
-        
-        ```jsx
-        ❌
-        components/
-        |- ClearSearchButton.vue
-        |- ExcludeFromSearchInput.vue
-        |- LaunchOnStartupCheckbox.vue
-        |- RunSearchButton.vue
-        |- SearchInput.vue
-        |- TermsCheckbox.vue
-        ```
-        
-        ```jsx
-        ✅
-        components/
-        |- SearchButtonClear.vue
-        |- SearchButtonRun.vue
-        |- SearchInputQuery.vue
-        |- SearchInputExcludeGlob.vue
-        |- SettingsCheckboxTerms.vue
-        |- SettingsCheckboxLaunchOnStartup.vue
-        ```
-        
-    </aside>
-    
-    <aside>
-    💡 **내용이 없는 컴포넌트는 self-closing 처리**
-    `DOM 템플릿은 해당 안 됨`
-    
-    - **DETAILS**
-        
-        ```jsx
-        ❌
-        <!-- 싱글 파일 컴포넌트, 문자열 템플릿, JSX에서 -->
-        <MyComponent></MyComponent>
-        
-        <!-- DOM 템플릿에서 -->
-        <my-component/>
-        ```
-        
-        ```jsx
-        ✅
-        <!-- 싱글 파일 컴포넌트, 문자열 템플릿, JSX에서 -->
-        <MyComponent/>
-        
-        <!-- DOM 템플릿에서 -->
-        <my-component></my-component>
-        ```
-        
-    </aside>
-    
-    <aside>
-    💡 **컴포넌트명은 약어보다 전체 단어로**
-    
-    - **DETAILS**
-        
-        ```jsx
-        ❌
-        components/
-        |- SdSettings.vue
-        |- UProfOpts.vue
-        ```
-        
-        ```jsx
-        ✅
-        components/
-        |- StudentDashboardSettings.vue
-        |- UserProfileOptions.vue
-        ```
-        
-    </aside>
-    
-    <aside>
-    💡 **prop명을 선언할 때는 카멜, 템플릿 및 JSX에서는 케밥**
-    
-    - **DETAILS**
-        
-        ```jsx
-        ❌
-        props: {
-          'greeting-text': String
-        }
-        
-        <WelcomeMessage greetingText="hi"/>
-        ```
-        
-        ```jsx
-        ✅
-        props: {
-          greetingText: String
-        }
-        
-        <WelcomeMessage greeting-text="hi"/>
-        ```
-        
-    </aside>
-    
-- **기타**
-    
-    <aside>
-    💡 **템플릿에는 computed나 methods 및 간단한 표현식만 포함**
-    
-    `computed는 여러 개의 간단한 속성으로 분할해야함`
-    
-    - **DETAILS**
-        
-        ```jsx
-        ❌
-        {{
-          fullName.split(' ').map((word) => {
-            return word[0].toUpperCase() + word.slice(1)
-          }).join(' ')
-        }}
-        ```
-        
-        ```jsx
-        ✅
-        <!-- 템플릿에서 -->
-        {{ normalizedFullName }}
-        
-        // 복잡한 표현식이 computed 속성으로 이동되었습니다.
-        computed: {
-          normalizedFullName() {
-            return this.fullName.split(' ')
-              .map(word => word[0].toUpperCase() + word.slice(1))
-              .join(' ')
+-   **컴포넌트명**
+      <aside>
+      💡 **컴포넌트 파일명은 파스칼과 케밥식을 사용**
+      
+      | 파스칼 | MyComponent |
+      | --- | --- |
+      | 케밥 | my-component |
+      | 카멜 | myComponent |
+      | 스네이크 | my_component |
+      </aside>
+      
+      <aside>
+      💡 **베이스 컴포넌트는 앞에 Base, App, V와 같은 접두사를 붙임**
+      
+      - **DETAILS**
+          
+          ```jsx
+          ❌
+          components/
+          |- MyButton.vue
+          |- VueTable.vue
+          |- Icon.vue
+          ```
+          
+          ```jsx
+          ✅
+          components/
+          |- BaseButton.vue
+          |- BaseTable.vue
+          |- BaseIcon.vue
+          
+          components/
+          |- AppButton.vue
+          |- AppTable.vue
+          |- AppIcon.vue
+          
+          components/
+          |- VButton.vue
+          |- VTable.vue
+          |- VIcon.vue
+          ```
+          
+      </aside>
+      
+      <aside>
+      💡 **하나의 활성 인스턴스를 갖는 컴포넌트는 앞에 The 접두사로 시작**
+      
+      **ex) Header, Footer, SideBar, Navigation**
+      
+      `페이지당 한 번만 사용된다는 의미`
+      
+      - **DETAILS**
+          
+          ```jsx
+          ❌
+          components/
+          |- Heading.vue
+          |- MySidebar.vue
+          ```
+          
+          ```jsx
+          ✅
+          components/
+          |- TheHeading.vue
+          |- TheSidebar.vue
+          ```
+          
+      </aside>
+      
+      <aside>
+      💡 **부모 컴포넌트와 밀접하게 연관된 자식 컴포넌트는 접두사로 부모명 사용**
+      
+      - **DETAILS**
+          
+          ```jsx
+          ❌
+          components/
+          |- TodoList.vue
+          |- TodoItem.vue
+          |- TodoButton.vue
+          ```
+          
+          ```jsx
+          ✅
+          components/
+          |- TodoList.vue
+          |- TodoListItem.vue
+          |- TodoListItemButton.vue
+          ```
+          
+      </aside>
+      
+      <aside>
+      💡 **컴포넌트명은 최상위 수준의 단어(대부분, 자주, 일반적)로 시작하고
+      설명을 나타내는 단어로 끝냄**
+      
+      - **DETAILS**
+          
+          ```jsx
+          ❌
+          components/
+          |- ClearSearchButton.vue
+          |- ExcludeFromSearchInput.vue
+          |- LaunchOnStartupCheckbox.vue
+          |- RunSearchButton.vue
+          |- SearchInput.vue
+          |- TermsCheckbox.vue
+          ```
+          
+          ```jsx
+          ✅
+          components/
+          |- SearchButtonClear.vue
+          |- SearchButtonRun.vue
+          |- SearchInputQuery.vue
+          |- SearchInputExcludeGlob.vue
+          |- SettingsCheckboxTerms.vue
+          |- SettingsCheckboxLaunchOnStartup.vue
+          ```
+          
+      </aside>
+      
+      <aside>
+      💡 **내용이 없는 컴포넌트는 self-closing 처리**
+      `DOM 템플릿은 해당 안 됨`
+      
+      - **DETAILS**
+          
+          ```jsx
+          ❌
+          <!-- 싱글 파일 컴포넌트, 문자열 템플릿, JSX에서 -->
+          <MyComponent></MyComponent>
+          
+          <!-- DOM 템플릿에서 -->
+          <my-component/>
+          ```
+          
+          ```jsx
+          ✅
+          <!-- 싱글 파일 컴포넌트, 문자열 템플릿, JSX에서 -->
+          <MyComponent/>
+          
+          <!-- DOM 템플릿에서 -->
+          <my-component></my-component>
+          ```
+          
+      </aside>
+      
+      <aside>
+      💡 **컴포넌트명은 약어보다 전체 단어로**
+      
+      - **DETAILS**
+          
+          ```jsx
+          ❌
+          components/
+          |- SdSettings.vue
+          |- UProfOpts.vue
+          ```
+          
+          ```jsx
+          ✅
+          components/
+          |- StudentDashboardSettings.vue
+          |- UserProfileOptions.vue
+          ```
+          
+      </aside>
+      
+      <aside>
+      💡 **prop명을 선언할 때는 카멜, 템플릿 및 JSX에서는 케밥**
+      
+      - **DETAILS**
+          
+          ```jsx
+          ❌
+          props: {
+            'greeting-text': String
           }
-        }
-        ```
-        
-    </aside>
-    
-    <aside>
-    💡 **디렉티브 약어는 모두 통일하거나 전부 사용하지 않기**
-    
-    `혼용하여 사용하지 않고, 하나로 통일`
-    
-    | : | v-bind: |
-    | --- | --- |
-    | @ | v-on: |
-    | # | v-slot |
-    </aside>
-    
+          
+          <WelcomeMessage greetingText="hi"/>
+          ```
+          
+          ```jsx
+          ✅
+          props: {
+            greetingText: String
+          }
+          
+          <WelcomeMessage greeting-text="hi"/>
+          ```
+          
+      </aside>
+
+-   **기타**
+      <aside>
+      💡 **템플릿에는 computed나 methods 및 간단한 표현식만 포함**
+      
+      `computed는 여러 개의 간단한 속성으로 분할해야함`
+      
+      - **DETAILS**
+          
+          ```jsx
+          ❌
+          {{
+            fullName.split(' ').map((word) => {
+              return word[0].toUpperCase() + word.slice(1)
+            }).join(' ')
+          }}
+          ```
+          
+          ```jsx
+          ✅
+          <!-- 템플릿에서 -->
+          {{ normalizedFullName }}
+          
+          // 복잡한 표현식이 computed 속성으로 이동되었습니다.
+          computed: {
+            normalizedFullName() {
+              return this.fullName.split(' ')
+                .map(word => word[0].toUpperCase() + word.slice(1))
+                .join(' ')
+            }
+          }
+          ```
+          
+      </aside>
+      
+      <aside>
+      💡 **디렉티브 약어는 모두 통일하거나 전부 사용하지 않기**
+      
+      `혼용하여 사용하지 않고, 하나로 통일`
+      
+      | : | v-bind: |
+      | --- | --- |
+      | @ | v-on: |
+      | # | v-slot |
+      </aside>
+
 
 ### 📢 권장 (임의 선택과 인지 오버헤드 최소화)
 
@@ -526,7 +507,7 @@
 5. ref, key
 6. v-model
 7. v-on (@)
-</aside>
+ </aside>
 
 <aside>
 💡 **컴포넌트와 인스턴스 옵션 순서  *(역시 사용해본 것만)***
@@ -538,46 +519,44 @@
 5. setup
 6. computed
 7. watch, 라이프 사이클 이벤트들
-</aside>
+ </aside>
 
 ### 📢 주의 필요
 
 <aside>
 💡 **scoped에서 요소 선택보다는 class로 선택하는 것이 빠름**
 
-- **DETAILS**
-    
+-   **DETAILS**
     ```jsx
     ❌
     <template>
       <button>×</button>
     </template>
-    
+
     <style scoped>
     button {
       background-color: red;
     }
     </style>
     ```
-    
     ```jsx
     ✅
     <template>
       <button class="btn btn-close">×</button>
     </template>
-    
+
     <style scoped>
     .btn-close {
       background-color: red;
     }
     </style>
     ```
-    
+
 </aside>
 
-## 🪝 **Basic Manual** ~~작업중~~
+## \***\*📄\*\*** **Basic Manual**
 
-*숙지 필요*
+_숙지 필요_
 
 ### 📢 setup
 
@@ -588,19 +567,19 @@
 
 ```jsx
 export default {
-	name: "Admin",
-	setup() {
-		// 정적 data
-		const name = "이준용";
-		const money = 0;
-		
-		const myWallet = () => {
-			console.log(`내 지갑에는 ${money}원이`);
-		}
+    name: "Admin",
+    setup() {
+        // 정적 data
+        const name = "이준용";
+        const money = 0;
 
-		return { name, money, myWallet };
-	}
-}
+        const myWallet = () => {
+            console.log(`내 지갑에는 ${money}원이`);
+        };
+
+        return { name, money, myWallet };
+    },
+};
 ```
 
 ### 📢 ref, reactive
@@ -755,3 +734,194 @@ export default {
 };
 </script>
 ```
+
+## 📃**Deep Manual** ~~작업중~~
+
+### **📢 <script setup>**
+
+<aside>
+💡 **더 간결한 코드
+더 빠른 성능
+setup 기능만 제공
+내보내기가 필요하면 일반 setup 블록을 이용할 것**
+
+</aside>
+
+```jsx
+<template>
+	<MyComponent />
+  <button @click="log">{{ msg }}</button>
+</template>
+
+<script setup>
+	// Composition API
+	import {ref} from "vue";
+
+	// import Component
+	import MyComponent from "./MyComponent.vue";
+
+	// props
+	const props = defineProps({
+	  foo: String
+	});
+
+	// emit
+	const emit = defineEmits(['change', 'delete']);
+
+	// variable
+	const msg = 'Hello!';
+	const name = ref("이준용");
+
+	// functions
+	const log = () => {
+		console.log(
+	}
+</script>
+```
+
+### **📢 Custom Directive**
+
+<aside>
+💡 **v-bind, v-for 등 외에 사용자가 직접 커스텀하여 정의할 수 있음**
+
+ex) v-focus.msg=”Hello World”
+
+-   **el**: 디렉티브가 사용된 엘리먼트
+-   **binding**: 아래 속성들을 가진 객체
+    -   **value**: “Hello World”
+    -   oldValue: 이전 값 (beforeUpdate, updated에서만)
+    -   arg: msg ( : )
+    -   modifiers: ( . )
+    -   dir: 정의 객체
+    -   instance: 디렉티브가 사용된 컴포넌트 인스턴스
+-   **vnode**: vue의 Virtual Node
+-   **prevNode**: 이전의 Virtual Node, (beforeUpdate, updated에서만)
+-   **SIMPLE**
+    ```jsx
+    // simple
+    <template>
+    	<input type="text"
+    		placeholder="자동 포커스"
+    		v-focus:msg="`환영환영`" />
+    </template>
+
+    <script>
+    	const focus = {
+    		mounted: (el, binding, vnoe, prevVnode) => {
+    			console.log(e1.arg);  // msg
+    			alert(binding.value);  // 환영환영
+    		};
+
+    	export default {
+    		directives{
+    			focus,
+    		},
+    	};
+    </script>
+    ```
+-   **Long Press Example**
+    ```jsx
+    // 꾹 누르기 예제
+    <template>
+        <h1 v-longpress="`꾸욱`">메인 페이지</h1>
+        <button v-longpress="`꾸욱`">꾸욱</button>
+    </template>
+
+    <script>
+    const longpress = {
+        mounted(el, binding, vnode, prevVnode) {
+            let isPress = null;
+
+            const start = (e) => {
+                if (isPress === null) {
+                    isPress = setTimeout(() => {
+                        console.log(binding.value);
+                    }, 1500);
+                }
+            };
+
+            const end = () => {
+                if (isPress !== null) {
+                    clearTimeout(isPress);
+                    isPress = null;
+                }
+            };
+
+            el.addEventListener("mousedown", start);
+            el.addEventListener("mouseup", end);
+        },
+    };
+
+    export default {
+        directives: {
+            longpress,
+        },
+    };
+    </script>
+    ```
+-   **Hooks**
+    ```jsx
+    // 여러가지 훅 함수 제공
+    const myDirective = {
+      // 엘리먼트의 속성,이벤트 리스너들이 적용되기 전에 호출
+      created(el, binding, vnode, prevVnode) {
+        // see below for details on arguments
+      },
+
+      // 엘리먼트가 mount 되기 전 호출
+      beforeMount() {},
+
+      // 엘리먼트가 mount 된 후 호출
+      mounted() {},
+
+      // Parent컴포넌트가 update 되기 전 호출
+      beforeUpdate() {},
+
+      // Parent컴포넌트와 모든 자식컴포넌트가 update 된 후 호출
+      updated() {},
+
+      // Parent컴포넌트가 unmount 되기 전 호출
+      beforeUnmount() {},
+
+      // Parent컴포넌트가 unmount 된 후 호출
+      unmounted() {}
+      }
+    }
+    ```
+
+</aside>
+
+### **📢 Base Component + slot + name**
+
+<aside>
+💡 **Base Component에 slot을 추가하여 불러들일 때 Elements들을 넣을 수 있었다.**
+
+**근데 slot을 여러개 사용할 수가 있는데 이럴 때 구분자가 name이다.**
+
+-   **DETAILS**
+    ```jsx
+    // Base Component
+    <template>
+    	<div>
+    		<div>
+    			<slot name="modal-header"></slot>
+    		</div>
+    		<div>
+    			<slot name="modal-body"></slot>
+    		</div>
+    	</div>
+    </template>
+
+    // Use slot name
+    <template>
+    	<Modal>
+    		<div #modal-header>여기는 헤더에요</div>
+    		<div #modal-body>여기는 바디에요에요</div>
+    	</Modal>
+    </template>
+    <script setup>
+    import Modal from "@share/BaseModal";
+    </script>
+    ```
+
+</aside>
