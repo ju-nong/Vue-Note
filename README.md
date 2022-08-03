@@ -8,6 +8,7 @@
 -   Visual Studio Code
 -   Node.js
 -   Git
+-   GitHub Desktop
 
 ### 📢 Visual Studio Code
 
@@ -58,6 +59,7 @@ _코드 리팩토링할 때, 읽어보면서 해보면 좋을 듯_
 💡 **내장 컴포넌트와의 충돌을 방지하기 위해, 컴포넌트명은 합성어를 사용**
 
 -   **DETAILS**
+
     ```jsx
     ❌
     app.component('todo', {
@@ -69,6 +71,7 @@ _코드 리팩토링할 때, 읽어보면서 해보면 좋을 듯_
       // ...
     }
     ```
+
     ```jsx
     ✅
     app.component('todo-item', {
@@ -86,10 +89,12 @@ _코드 리팩토링할 때, 읽어보면서 해보면 좋을 듯_
 💡 **Prop은 상세하게 정의하고 Type을 명시**
 
 -   **DETAILS**
+
     ```jsx
     ❌
     props: ['status']
     ```
+
     ```jsx
     ✅
     props: {
@@ -141,6 +146,7 @@ _코드 리팩토링할 때, 읽어보면서 해보면 좋을 듯_
 💡 **v-if와 v-for 동시 사용 금지**
 
 -   **DETAILS**
+
     ```jsx
     ❌ active 유저만 보여주고 싶을 때
     <ul>
@@ -153,6 +159,7 @@ _코드 리팩토링할 때, 읽어보면서 해보면 좋을 듯_
       </li>
     </ul>
     ```
+
     ```jsx
     ✅
     // Step 1: active인 유저 따로 만들어서 for 돌리기
@@ -185,6 +192,7 @@ _코드 리팩토링할 때, 읽어보면서 해보면 좋을 듯_
 **기타 CSS 라이브러리를 이용할 때는 class 사용**
 
 -   **DETAILS**
+
     ```jsx
     ❌
     <template>
@@ -197,6 +205,7 @@ _코드 리팩토링할 때, 읽어보면서 해보면 좋을 듯_
     }
     </style>
     ```
+
     ```jsx
     ✅
     <template>
@@ -494,7 +503,6 @@ _코드 리팩토링할 때, 읽어보면서 해보면 좋을 듯_
       | # | v-slot |
       </aside>
 
-
 ### 📢 권장 (임의 선택과 인지 오버헤드 최소화)
 
 <aside>
@@ -527,6 +535,7 @@ _코드 리팩토링할 때, 읽어보면서 해보면 좋을 듯_
 💡 **scoped에서 요소 선택보다는 class로 선택하는 것이 빠름**
 
 -   **DETAILS**
+
     ```jsx
     ❌
     <template>
@@ -539,6 +548,7 @@ _코드 리팩토링할 때, 읽어보면서 해보면 좋을 듯_
     }
     </style>
     ```
+
     ```jsx
     ✅
     <template>
@@ -797,6 +807,7 @@ ex) v-focus.msg=”Hello World”
 -   **vnode**: vue의 Virtual Node
 -   **prevNode**: 이전의 Virtual Node, (beforeUpdate, updated에서만)
 -   **SIMPLE**
+
     ```jsx
     // simple
     <template>
@@ -819,7 +830,9 @@ ex) v-focus.msg=”Hello World”
     	};
     </script>
     ```
+
 -   **Long Press Example**
+
     ```jsx
     // 꾹 누르기 예제
     <template>
@@ -859,7 +872,9 @@ ex) v-focus.msg=”Hello World”
     };
     </script>
     ```
+
 -   **Hooks**
+
     ```jsx
     // 여러가지 훅 함수 제공
     const myDirective = {
@@ -899,6 +914,7 @@ ex) v-focus.msg=”Hello World”
 **근데 slot을 여러개 사용할 수가 있는데 이럴 때 구분자가 name이다.**
 
 -   **DETAILS**
+
     ```jsx
     // Base Component
     <template>
