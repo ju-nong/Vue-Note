@@ -1,5 +1,3 @@
-# 이준용
-
 ## \***\*⚙️\*\*** **Development environment setting**
 
 ### 📢 Setup List
